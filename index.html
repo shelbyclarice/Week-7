@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Week 7: T-Shirts</title>
+    <link rel="stylesheet" href="style.css" />
+    <!--Shelby Cochrane-->
+    <!--This website allows you to choose your T-Shirt Color and Size. Enter your color and size in the inputs, then click submit. A bullet point sentense will appear below telling you what color and size you choose. You can make submissions as many times as you like and the list will continue on until you refresh the page.-->
+  </head>
+  <body>
+    <container>
+      <!--Heading-->
+      <h1>Choose your T-Shirt!</h1>
+
+      <!--Form includes 2 labels, 2 inputs, and a button-->
+      <form>
+        <label for="color">Color:</label>
+        <input type="text" id="color" />
+        <br /><br />
+        <label for="size">Size:</label>
+        <input type="text" id="size" />
+        <br /><br />
+        <button type="button" onclick="addShirt()">Submit</button>
+      </form>
+
+      <!--After Submission, text appears below in bullet point format-->
+      <ul id="shirt"></ul>
+    </container>
+
+    <script>
+      // Constructor for two objects: color and size, and assigns them as properties
+      function Shirt(color, size) {
+        this.color = color;
+        this.size = size;
+      }
+
+      // Method to display information about shirt
+      Shirt.prototype.info = function () {
+        return "You choose the color " + this.color + " and size " + this.size;
+      };
+
+      // Global variable
+      var chooseShirt = [];
+
+      // Function to add shirt to list
+      function addShirt() {
+        var colorInput = document.getElementById("color");
+        var sizeInput = document.getElementById("size");
+
+        var newShirt = new Shirt(colorInput.value, sizeInput.value);
+        chooseShirt.push(newShirt);
+
+        var shirtDisplay = document.getElementById("shirt");
+        var shirtItem = document.createElement("li");
+        shirtItem.textContent = newShirt.info();
+        shirtDisplay.appendChild(shirtItem);
+
+        // Clear the input fields
+        colorInput.value = "";
+        sizeInput.value = "";
+      }
+    </script>
+  </body>
+</html>

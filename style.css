@@ -1,0 +1,34 @@
+/* Heading */
+h1 {
+  color: rgb(77, 156, 12);
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-align: center;
+  font-size: 50px;
+  letter-spacing: 10px;
+}
+
+/* form with labels and inputs */
+form {
+  padding-left: 80px;
+  font-size: 40px;
+}
+
+form label {
+  padding: 10px;
+}
+
+/* Submission button */
+form button {
+  font-size: 30px;
+  border-radius: 6px;
+  color: rgb(77, 156, 12);
+  border-color: blue;
+}
+
+/* unordered list that appears after submission */
+ul {
+  font-size: 20px;
+  padding-left: 100px;
+  padding-top: 30px;
+  color: blue;
+}
